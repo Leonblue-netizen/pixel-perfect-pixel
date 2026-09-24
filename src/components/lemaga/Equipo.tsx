@@ -263,7 +263,7 @@ function Retrato({ foto, nombre, index }: { foto: string; nombre: string; index:
         </div>
       ) : (
         <div className="flex aspect-[4/5] w-full flex-col items-center justify-center rounded-[1.75rem] border-2 border-dashed border-pendiente px-6 text-center">
-          <span className="text-sm text-pendiente">{`[Foto de ${nombre}]`}</span>
+          <span className="text-sm text-pendiente"></span>
         </div>
       )}
       <Estrella
