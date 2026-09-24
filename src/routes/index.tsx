@@ -1,24 +1,47 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+import { Fondo } from "@/components/lemaga/Fondo";
+import { Navegacion } from "@/components/lemaga/Navegacion";
+import { Portada } from "@/components/lemaga/Portada";
+import { Cinta } from "@/components/lemaga/Cinta";
+import { Servicios } from "@/components/lemaga/Servicios";
+import { Equipo } from "@/components/lemaga/Equipo";
+import { Caso } from "@/components/lemaga/Caso";
+import { Contacto } from "@/components/lemaga/Contacto";
+import { Pie } from "@/components/lemaga/Pie";
+
+const titulo = "Lemaga · Tres Frentes · Portafolio de consultoría 2026";
+const descripcion =
+  "Consultoría para emprendimientos y pymes. Somos tres estudiantes con seis líneas de servicio y casos reales de emprendedores con los que ya trabajamos.";
+
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: titulo },
+      { name: "description", content: descripcion },
+      { property: "og:title", content: titulo },
+      { property: "og:description", content: descripcion },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="relative min-h-screen overflow-x-hidden">
+      <Fondo />
+      <Navegacion />
+      <main className="relative">
+        <Portada />
+        <Cinta />
+        <Servicios />
+        <Equipo />
+        <Caso />
+        <Contacto />
+      </main>
+      <Pie />
     </div>
   );
 }
