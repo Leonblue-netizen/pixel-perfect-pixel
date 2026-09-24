@@ -84,12 +84,12 @@ function EspacioFoto({ src, aspecto = "aspect-square" }: { src: string; aspecto?
 
   if (mostrar) {
     return (
-      <div className={`overflow-hidden rounded-[20px] ${aspecto}`}>
+      <div className={`w-full overflow-hidden rounded-[20px] ${aspecto}`}>
         <img
           src={src}
           alt=""
           onError={() => setError(true)}
-          className="h-full w-full object-cover transition-transform duration-500 ease-out hover:scale-110"
+          className="h-full w-full object-cover object-top transition-transform duration-500 ease-out hover:scale-110"
         />
       </div>
     );
@@ -112,6 +112,42 @@ function BloqueTexto({ texto }: { texto: string }) {
   return <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{texto}</p>;
 }
 
+/** Nombre corto de un proyecto, encima de su foto. */
+function NombreFoto({ nombre }: { nombre: string }) {
+  if (esPendiente(nombre)) {
+    return <p className="pendiente font-sans mb-2 text-xs">{nombre}</p>;
+  }
+  return <p className="mb-2 text-sm font-bold">{nombre}</p>;
+}
+
+/** Una foto metida dentro de un marco de celular, para capturas de una app. */
+function MockupCelular({ src, alt }: { src: string; alt: string }) {
+  const [error, setError] = useState(false);
+  const mostrar = Boolean(src) && !esPendiente(src) && !error;
+
+  return (
+    <div className="flex h-[28rem] w-full items-center justify-center sm:h-80">
+      <div className="relative h-full max-w-full rounded-[1.75rem] border-[6px] border-tinta bg-tinta p-1.5 shadow-2xl [aspect-ratio:5/7]">
+        <div className="absolute left-1/2 top-1.5 z-10 h-4 w-16 -translate-x-1/2 rounded-full bg-tinta" />
+        <div className="h-full w-full overflow-hidden rounded-[1.25rem] bg-background">
+          {mostrar ? (
+            <img
+              src={src}
+              alt={alt}
+              onError={() => setError(true)}
+              className="h-full w-full object-cover transition-transform duration-500 ease-out hover:scale-110"
+            />
+          ) : (
+            <div className="flex h-full w-full flex-col items-center justify-center border-2 border-dashed border-pendiente px-3 text-center">
+              <span className="text-xs text-pendiente">{alt}</span>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 /** Fila de fotos con un bloque de texto propio debajo de cada una. */
 function FotosConCaption({ fotos }: { fotos: FotoConTexto[] }) {
   const total = Math.max(3, fotos.length);
@@ -123,8 +159,13 @@ function FotosConCaption({ fotos }: { fotos: FotoConTexto[] }) {
   return (
     <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
       {items.map((item, i) => (
-        <div key={i}>
-          <EspacioFoto src={item.src} aspecto="aspect-[4/5]" />
+        <div key={i} className={item.grande ? "sm:col-span-2" : undefined}>
+          <NombreFoto nombre={item.nombre ?? "[Completar: nombre del proyecto]"} />
+          {item.tipo === "mockup" ? (
+            <MockupCelular src={item.src} alt="[Foto del proyecto]" />
+          ) : (
+            <EspacioFoto src={item.src} aspecto={item.aspecto ?? "aspect-[4/5]"} />
+          )}
           <BloqueTexto texto={item.texto} />
         </div>
       ))}
@@ -132,8 +173,20 @@ function FotosConCaption({ fotos }: { fotos: FotoConTexto[] }) {
   );
 }
 
-/** El encabezado de texto de la tarjeta de proyecto: badge, etiqueta, nombre y descripción. */
-function InfoProyecto({ persona, index }: { persona: (typeof equipo)[number]; index: number }) {
+/**
+ * El encabezado de texto de la tarjeta de proyecto: badge y etiqueta siempre,
+ * más nombre y descripción cuando `conNombreYDescripcion` es true (se omiten
+ * cuando cada foto ya trae su propio nombre y texto, como en fotosConTexto).
+ */
+function InfoProyecto({
+  persona,
+  index,
+  conNombreYDescripcion = true,
+}: {
+  persona: (typeof equipo)[number];
+  index: number;
+  conNombreYDescripcion?: boolean;
+}) {
   const acento = acentoDe(index);
   const { proyecto } = persona;
 
@@ -148,18 +201,22 @@ function InfoProyecto({ persona, index }: { persona: (typeof equipo)[number]; in
         Proyecto de {persona.nombre}
       </span>
 
-      {esPendiente(proyecto.nombre) ? (
-        <p className="pendiente font-sans mt-2 text-sm">{proyecto.nombre}</p>
-      ) : (
-        <h4 className="texto-ancha mt-2 text-2xl md:text-3xl">{proyecto.nombre}</h4>
-      )}
+      {conNombreYDescripcion && (
+        <>
+          {esPendiente(proyecto.nombre) ? (
+            <p className="pendiente font-sans mt-2 text-sm">{proyecto.nombre}</p>
+          ) : (
+            <h4 className="texto-ancha mt-2 text-2xl md:text-3xl">{proyecto.nombre}</h4>
+          )}
 
-      <div className="mt-4 min-h-[7rem]">
-        <Texto
-          valor={proyecto.descripcion}
-          className="block text-sm leading-relaxed text-muted-foreground"
-        />
-      </div>
+          <div className="mt-4 min-h-[7rem]">
+            <Texto
+              valor={proyecto.descripcion}
+              className="block text-sm leading-relaxed text-muted-foreground"
+            />
+          </div>
+        </>
+      )}
     </div>
   );
 }
@@ -202,8 +259,8 @@ function Proyecto({ persona, index }: { persona: (typeof equipo)[number]; index:
 
           {proyecto.fotosConTexto ? (
             <div>
-              <InfoProyecto persona={persona} index={index} />
-              <div className="mt-6">
+              <InfoProyecto persona={persona} index={index} conNombreYDescripcion={false} />
+              <div className="mt-4">
                 <FotosConCaption fotos={proyecto.fotosConTexto} />
               </div>
             </div>

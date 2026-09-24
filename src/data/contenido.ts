@@ -80,8 +80,26 @@ export const servicios = [
 export type ItemEducacion = { titulo: string; lugar: string; anios: string };
 export type ItemExperiencia = { cargo: string; lugar: string; anios: string };
 
-/** Una foto con su propio texto corto debajo, por ejemplo un pie de foto. */
-export type FotoConTexto = { src: string; texto: string };
+/**
+ * Una foto con su propio texto corto debajo, por ejemplo un pie de foto.
+ * - nombre: opcional. El nombre corto del proyecto, se muestra encima de
+ *   la foto. Si no se pone, aparece "[Completar: nombre del proyecto]".
+ * - tipo: opcional. Pon "mockup" para que la foto se muestre metida dentro
+ *   de un marco de celular (útil para capturas de una app).
+ * - aspecto: opcional. Proporción del recuadro, por ejemplo "aspect-[9/16]"
+ *   para una foto vertical angosta tipo celular. Si no se pone, usa la
+ *   proporción por defecto (más cuadrada).
+ * - grande: opcional. Pon "true" para que esta foto ocupe el doble de
+ *   espacio que las otras en la fila.
+ */
+export type FotoConTexto = {
+  src: string;
+  texto: string;
+  nombre?: string;
+  tipo?: "mockup";
+  aspecto?: string;
+  grande?: boolean;
+};
 
 /**
  * El proyecto de cada consultor.
@@ -114,7 +132,7 @@ export const equipo = [
     nombre: "Sofia Leon",
     especialidad: "innovación, diseño centrado en el usuario y prospectiva",
     // Pega aquí la ruta de la foto, por ejemplo: "/images/sofia.jpg". Vacío = recuadro punteado.
-    foto: "",
+    foto: "/images/sofia.webp",
     // Párrafo corto de presentación personal.
     presentacion: "[Completar: presentación]",
     // Agrega un objeto por cada título o programa (título, lugar, años).
@@ -148,9 +166,25 @@ export const equipo = [
       fotos: [] as string[],
       // Tres fotos en fila, cada una con su propio texto debajo.
       fotosConTexto: [
-        { src: "", texto: "[Completar: texto de la foto 1]" },
-        { src: "", texto: "[Completar: texto de la foto 2]" },
-        { src: "", texto: "[Completar: texto de la foto 3]" },
+        {
+          src: "/images/aimsdream-inicio-flat.png",
+          nombre: "Aints&dream",
+          texto:
+            "Aints&dream, MVP de productividad para personas multirol. Muestra en qué rol estás invirtiendo más tiempo.",
+          aspecto: "aspect-[4/5]",
+        },
+        {
+          src: "/images/limit-app.png",
+          nombre: "Limit",
+          texto: "Limit, MVP para emprendedores para el registro y la toma de decisiones.",
+          aspecto: "aspect-[4/5]",
+        },
+        {
+          src: "/images/proyecto-sofia-3.png",
+          nombre: "Dulcesoft",
+          texto:
+            "Dulcesoft, emprendimiento de postres tipo pavé en distintos sabores, ya lanzado al mercado.",
+        },
       ] as FotoConTexto[],
     } as Proyecto,
   },
@@ -232,6 +266,18 @@ export const caso = {
   // el marco con "video próximamente".
   video: "",
   textoVideoPendiente: "video próximamente",
+  // Vista previa tipo libro de la cartilla-guía. Pega aquí las rutas de las
+  // imágenes (por ejemplo "/images/cartilla-portada.jpg"). Deja "" en la que
+  // no tengas todavía y se muestra un recuadro punteado en su lugar.
+  cartilla: {
+    // La tapa/portada de la cartilla.
+    portada: "/images/cartilla-portada.webp",
+    // Una o dos páginas interiores para mostrar como muestra.
+    paginas: [
+      "/images/cartilla-pagina-indice.png",
+      "/images/cartilla-pagina-introduccion.png",
+    ] as string[],
+  },
   // Si está vacío, el botón de descarga no aparece.
   enlaceCartilla: "",
   textoBotonCartilla: "Descargar la cartilla-guía",
