@@ -5,7 +5,7 @@
  * No hace falta tocar ningún otro archivo.
  *
  * Reglas simples:
- * - Cualquier texto que empiece con "[" se ve con borde punteado amarillo:
+ * - Cualquier texto que empiece con "[" se ve con borde punteado:
  *   significa "pendiente por completar".
  * - Si una foto no existe, déjala como "" y se muestra un fondo de color
  *   con la inicial del nombre.
@@ -72,25 +72,154 @@ export const servicios = [
   },
 ];
 
+/**
+ * Un ítem de educación o experiencia. Cuando el título o el cargo empieza
+ * con "[" se considera pendiente y se muestra con borde punteado, sin
+ * importar lo que digan lugar o años.
+ */
+export type ItemEducacion = { titulo: string; lugar: string; anios: string };
+export type ItemExperiencia = { cargo: string; lugar: string; anios: string };
+
+/** Una foto con su propio texto corto debajo, por ejemplo un pie de foto. */
+export type FotoConTexto = { src: string; texto: string };
+
+/**
+ * El proyecto de cada consultor.
+ * - nombre: el nombre del proyecto.
+ * - descripcion: qué es, qué problema resuelve y qué se logró. Puede ser
+ *   largo, hay espacio de sobra en la tarjeta.
+ * - fotos: lista de rutas a imágenes, por ejemplo:
+ *   ["/images/proyecto-sofia-1.jpg", "/images/proyecto-sofia-2.jpg"].
+ *   La primera se muestra grande y el resto en una cuadrícula debajo.
+ *   Mientras la lista esté vacía se muestran recuadros punteados.
+ * - fotosConTexto: opcional. Cuando se usa, reemplaza a "fotos" y muestra
+ *   tres (o más) fotos en fila, cada una con su propio bloque de texto
+ *   debajo, por ejemplo para capturas de redes sociales con su pie de foto.
+ *   Cada objeto es { src: "ruta de la imagen", texto: "el pie de foto" }.
+ * - orientacion: opcional, solo aplica cuando no se usa "fotosConTexto".
+ *   "vertical" (el valor por defecto si se omite) apila la foto grande
+ *   debajo del texto. "horizontal" pone la foto al lado del texto. Se usa
+ *   para que no todos los proyectos se vean iguales.
+ */
+export type Proyecto = {
+  nombre: string;
+  descripcion: string;
+  fotos: string[];
+  fotosConTexto?: FotoConTexto[];
+  orientacion?: "vertical" | "horizontal";
+};
+
 export const equipo = [
   {
     nombre: "Sofia Leon",
-    descripcion: "innovación, diseño centrado en el usuario y prospectiva",
-    // Pega aquí la ruta de la foto, por ejemplo: "/images/sofia.jpg"
+    especialidad: "innovación, diseño centrado en el usuario y prospectiva",
+    // Pega aquí la ruta de la foto, por ejemplo: "/images/sofia.jpg". Vacío = recuadro punteado.
     foto: "",
+    // Párrafo corto de presentación personal.
+    presentacion: "[Completar: presentación]",
+    // Agrega un objeto por cada título o programa (título, lugar, años).
+    educacion: [
+      {
+        titulo: "[Completar: título del programa]",
+        lugar: "[Completar: institución]",
+        anios: "[Completar: años]",
+      },
+    ] as ItemEducacion[],
+    // Agrega un objeto por cada experiencia (cargo, lugar, años).
+    experiencia: [
+      {
+        cargo: "[Completar: cargo]",
+        lugar: "[Completar: lugar]",
+        anios: "[Completar: años]",
+      },
+    ] as ItemExperiencia[],
+    habilidades: [
+      "investigación cualitativa",
+      "prospectiva estratégica",
+      "desarrollo de MVP",
+      "gestión social y RSE",
+    ],
+    // Lista de herramientas de trabajo, por ejemplo: ["Figma", "Notion"].
+    herramientas: ["[Completar: herramientas]"],
     correo: "[correo]",
+    proyecto: {
+      nombre: "[Completar: nombre del proyecto]",
+      descripcion: "[Completar: qué es el proyecto, qué problema resuelve y qué se logró]",
+      fotos: [] as string[],
+      // Tres fotos en fila, cada una con su propio texto debajo.
+      fotosConTexto: [
+        { src: "", texto: "[Completar: texto de la foto 1]" },
+        { src: "", texto: "[Completar: texto de la foto 2]" },
+        { src: "", texto: "[Completar: texto de la foto 3]" },
+      ] as FotoConTexto[],
+    } as Proyecto,
   },
   {
     nombre: "Francisco Martínez Díaz",
-    descripcion: "desarrollo de negocios, finanzas y propiedad intelectual",
+    especialidad: "desarrollo de negocios, finanzas y propiedad intelectual",
     foto: "",
+    presentacion: "[Completar: presentación]",
+    educacion: [
+      {
+        titulo: "[Completar: título del programa]",
+        lugar: "[Completar: institución]",
+        anios: "[Completar: años]",
+      },
+    ] as ItemEducacion[],
+    experiencia: [
+      {
+        cargo: "[Completar: cargo]",
+        lugar: "[Completar: lugar]",
+        anios: "[Completar: años]",
+      },
+    ] as ItemExperiencia[],
+    habilidades: [
+      "estructuración financiera",
+      "pitching de inversión",
+      "marco legal y SAS",
+      "planes de marketing",
+    ],
+    herramientas: ["[Completar: herramientas]"],
     correo: "[correo]",
+    proyecto: {
+      nombre: "[Completar: nombre del proyecto]",
+      descripcion: "[Completar: qué es el proyecto, qué problema resuelve y qué se logró]",
+      fotos: [] as string[],
+      orientacion: "horizontal",
+    } as Proyecto,
   },
   {
     nombre: "Jeidy Gaviria",
-    descripcion: "gestión operativa, análisis de datos y ventas de campo",
+    especialidad: "gestión operativa, análisis de datos y ventas de campo",
     foto: "",
+    presentacion: "[Completar: presentación]",
+    educacion: [
+      {
+        titulo: "[Completar: título del programa]",
+        lugar: "[Completar: institución]",
+        anios: "[Completar: años]",
+      },
+    ] as ItemEducacion[],
+    experiencia: [
+      {
+        cargo: "[Completar: cargo]",
+        lugar: "[Completar: lugar]",
+        anios: "[Completar: años]",
+      },
+    ] as ItemExperiencia[],
+    habilidades: [
+      "decisiones con datos",
+      "análisis estadístico",
+      "activación en ferias",
+      "contenido y podcast",
+    ],
+    herramientas: ["[Completar: herramientas]"],
     correo: "[correo]",
+    proyecto: {
+      nombre: "[Completar: nombre del proyecto]",
+      descripcion: "[Completar: qué es el proyecto, qué problema resuelve y qué se logró]",
+      fotos: [] as string[],
+    } as Proyecto,
   },
 ];
 
@@ -110,8 +239,7 @@ export const caso = {
 
 export const contacto = {
   titulo: "Contacto",
-  descripcion:
-    "Escríbenos con el nombre de tu emprendimiento y el problema que quieres resolver.",
+  descripcion: "Escríbenos con el nombre de tu emprendimiento y el problema que quieres resolver.",
 };
 
 export const pie = "Portafolio de consultoría empresarial · Proyecto universitario · 2026";

@@ -12,7 +12,7 @@ export function Caso() {
     <section id="caso" className="relative px-5 py-20 md:py-28">
       <div className="mx-auto max-w-6xl">
         <Aparece>
-          <p className="font-mano text-2xl text-lima md:text-3xl">caso grupal</p>
+          <p className="texto-ancha text-xl text-lima md:text-2xl">caso grupal</p>
           <h2 className="mt-1 max-w-3xl text-4xl font-extrabold md:text-6xl">{caso.titulo}</h2>
         </Aparece>
 
@@ -49,7 +49,7 @@ export function Caso() {
                 ) : (
                   <div className="flex h-full w-full flex-col items-center justify-center gap-3">
                     <Estrella className="h-5 w-5" tono="text-rosa" />
-                    <span className="font-mano text-2xl text-menta">
+                    <span className="texto-ancha text-lg text-menta">
                       {caso.textoVideoPendiente}
                     </span>
                   </div>

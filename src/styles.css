@@ -47,7 +47,7 @@
   --color-pendiente: var(--pendiente);
 
   --font-display: "Unbounded", system-ui, sans-serif;
-  --font-mano: "Caveat", cursive;
+  --font-ancha: "Syne", system-ui, sans-serif;
   --font-sans: "DM Sans", system-ui, sans-serif;
 }
 
@@ -63,7 +63,7 @@
   --periwinkle: oklch(0.8153 0.0919 268);
   --menta: oklch(0.8925 0.0194 176.4);
   --rosa: oklch(0.7371 0.2038 345.4);
-  --pendiente: oklch(0.85 0.17 95);
+  --pendiente: var(--lila);
 
   --card: oklch(0.2225 0.0194 284.7);
   --card-foreground: oklch(0.971 0.004 286.3);
@@ -139,6 +139,14 @@
   background-image: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
+/* Fuente ancha y pesada en mayúsculas, para títulos cortos y frases clave */
+@utility texto-ancha {
+  font-family: var(--font-ancha);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+}
+
 /* Cinta que corre */
 @utility cinta-corre {
   display: inline-flex;
@@ -169,6 +177,22 @@
   }
 }
 
+/* Stickers que flotan despacio */
+@utility flota {
+  animation: flotar 6s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes flotar {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(0, -10px, 0) rotate(4deg);
+  }
+}
+
 /* Texto pendiente por completar */
 @utility pendiente {
   border: 1.5px dashed var(--color-pendiente);
@@ -184,7 +208,8 @@
   }
 
   .destello,
-  .cinta-corre {
+  .cinta-corre,
+  .flota {
     animation: none !important;
   }
 

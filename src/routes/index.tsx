@@ -38,6 +38,7 @@ function Index() {
         <Cinta />
         <Servicios />
         <Equipo />
+        <Cinta />
         <Caso />
         <Contacto />
       </main>

@@ -13,7 +13,7 @@ export function Servicios() {
     <section id="servicios" className="relative px-5 py-20 md:py-28">
       <div className="mx-auto max-w-6xl">
         <Aparece>
-          <p className="font-mano text-2xl text-lila md:text-3xl">seis líneas</p>
+          <p className="texto-ancha text-xl text-lila md:text-2xl">seis líneas</p>
           <h2 className="mt-1 text-4xl font-extrabold md:text-6xl">Servicios</h2>
         </Aparece>
 

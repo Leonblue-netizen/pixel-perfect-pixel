@@ -12,10 +12,7 @@ export function Cinta() {
             <span className="px-6 font-display text-sm uppercase tracking-[0.18em] text-menta md:text-base">
               {texto}
             </span>
-            <Estrella
-              className="h-3 w-3 shrink-0"
-              tono={i % 5 === 2 ? "text-rosa" : "text-lima"}
-            />
+            <Estrella className="h-3 w-3 shrink-0" tono={i % 5 === 2 ? "text-rosa" : "text-lima"} />
           </span>
         ))}
       </div>

@@ -6,7 +6,7 @@ export function Portada() {
     <section id="portada" className="relative px-5 pb-20 pt-32 md:pb-28 md:pt-44">
       <div className="mx-auto max-w-6xl">
         <Aparece>
-          <p className="font-mano text-3xl text-periwinkle md:text-4xl">
+          <p className="texto-ancha text-2xl text-periwinkle md:text-3xl">
             {marca.manuscritoPortada}
           </p>
         </Aparece>

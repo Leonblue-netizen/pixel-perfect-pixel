@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
 import { esPendiente } from "@/data/contenido";
 
 /** Muestra un texto; si empieza con "[" lo marca como pendiente. */
@@ -54,15 +54,18 @@ export function Aparece({
 export function Estrella({
   className = "",
   tono = "text-lima",
+  style,
 }: {
   className?: string;
   tono?: string;
+  style?: CSSProperties;
 }) {
   return (
     <svg
       viewBox="0 0 24 24"
       aria-hidden="true"
       className={`${tono} ${className}`}
+      style={style}
       fill="currentColor"
     >
       <path d="M12 0c.6 5.5 2.4 8.4 12 12-9.6 3.6-11.4 6.5-12 12-.6-5.5-2.4-8.4-12-12C9.6 8.4 11.4 5.5 12 0z" />
