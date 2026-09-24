@@ -150,10 +150,10 @@ export const equipo = [
     proyecto: {
       nombre: "[Completar: nombre del proyecto]",
       descripcion: "[Completar: qué es el proyecto, qué problema resuelve y qué se logró]",
-      fotos: [fotoDesfile.url] as string[],
+      fotos: [] as string[],
       // Tres fotos en fila, cada una con su propio texto debajo.
       fotosConTexto: [
-        { src: fotoDesfile.url, texto: "[Completar: texto de la foto 1]" },
+        { src: "", texto: "[Completar: texto de la foto 1]" },
         { src: "", texto: "[Completar: texto de la foto 2]" },
         { src: "", texto: "[Completar: texto de la foto 3]" },
       ] as FotoConTexto[],
@@ -189,7 +189,7 @@ export const equipo = [
     proyecto: {
       nombre: "[Completar: nombre del proyecto]",
       descripcion: "[Completar: qué es el proyecto, qué problema resuelve y qué se logró]",
-      fotos: [fotoStandQuillaz.url] as string[],
+      fotos: [] as string[],
       orientacion: "horizontal",
     } as Proyecto,
   },
@@ -223,7 +223,7 @@ export const equipo = [
     proyecto: {
       nombre: "[Completar: nombre del proyecto]",
       descripcion: "[Completar: qué es el proyecto, qué problema resuelve y qué se logró]",
-      fotos: [fotoTaller.url] as string[],
+      fotos: [fotoDesfile.url, fotoStandQuillaz.url, fotoTaller.url] as string[],
     } as Proyecto,
   },
 ];
