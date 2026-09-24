@@ -12,6 +12,11 @@
  * - El campo de video acepta enlaces de YouTube, Vimeo o Google Drive.
  */
 
+import fotoJeidy from "@/assets/jeidy-gaviria.png.asset.json";
+import fotoDesfile from "@/assets/desfile-makeup.png.asset.json";
+import fotoStandQuillaz from "@/assets/stand-quillaz.png.asset.json";
+import fotoTaller from "@/assets/taller-comunidad.png.asset.json";
+
 export const marca = {
   nombre: "Lemaga",
   manuscritoPortada: "portafolio 2026",
@@ -145,10 +150,10 @@ export const equipo = [
     proyecto: {
       nombre: "[Completar: nombre del proyecto]",
       descripcion: "[Completar: qué es el proyecto, qué problema resuelve y qué se logró]",
-      fotos: [] as string[],
+      fotos: [fotoDesfile.url] as string[],
       // Tres fotos en fila, cada una con su propio texto debajo.
       fotosConTexto: [
-        { src: "", texto: "[Completar: texto de la foto 1]" },
+        { src: fotoDesfile.url, texto: "[Completar: texto de la foto 1]" },
         { src: "", texto: "[Completar: texto de la foto 2]" },
         { src: "", texto: "[Completar: texto de la foto 3]" },
       ] as FotoConTexto[],
@@ -184,14 +189,14 @@ export const equipo = [
     proyecto: {
       nombre: "[Completar: nombre del proyecto]",
       descripcion: "[Completar: qué es el proyecto, qué problema resuelve y qué se logró]",
-      fotos: [] as string[],
+      fotos: [fotoStandQuillaz.url] as string[],
       orientacion: "horizontal",
     } as Proyecto,
   },
   {
     nombre: "Jeidy Gaviria",
     especialidad: "gestión operativa, análisis de datos y ventas de campo",
-    foto: "",
+    foto: fotoJeidy.url,
     presentacion: "[Completar: presentación]",
     educacion: [
       {
@@ -218,7 +223,7 @@ export const equipo = [
     proyecto: {
       nombre: "[Completar: nombre del proyecto]",
       descripcion: "[Completar: qué es el proyecto, qué problema resuelve y qué se logró]",
-      fotos: [] as string[],
+      fotos: [fotoTaller.url] as string[],
     } as Proyecto,
   },
 ];
