@@ -12,6 +12,7 @@
  * - El campo de video acepta enlaces de YouTube, Vimeo o Google Drive.
  */
 
+import fotoSofia from "@/assets/sofia-leon.png.asset.json";
 import fotoJeidy from "@/assets/jeidy-gaviria.png.asset.json";
 import fotoDesfile from "@/assets/desfile-makeup.png.asset.json";
 import fotoStandQuillaz from "@/assets/stand-quillaz.png.asset.json";
@@ -122,7 +123,7 @@ export const equipo = [
     nombre: "Sofia Leon",
     especialidad: "innovación, diseño centrado en el usuario y prospectiva",
     // Pega aquí la ruta de la foto, por ejemplo: "/images/sofia.jpg". Vacío = recuadro punteado.
-    foto: "",
+    foto: fotoSofia.url,
     // Párrafo corto de presentación personal.
     presentacion: "[Completar: presentación]",
     // Agrega un objeto por cada título o programa (título, lugar, años).
