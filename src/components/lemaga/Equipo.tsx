@@ -268,12 +268,11 @@ function Retrato({
             src={foto}
             alt={nombre}
             onError={() => setError(true)}
-            style={{ objectPosition: posicion }}
             className="h-full w-full object-cover"
           />
         </div>
       ) : (
-        <div className="flex aspect-[4/5] w-full flex-col items-center justify-center rounded-[1.75rem] border-2 border-dashed border-pendiente px-6 text-center">
+        <div className={`flex ${aspecto} w-full flex-col items-center justify-center rounded-[1.75rem] border-2 border-dashed border-pendiente px-6 text-center`}>
           <span className="text-sm text-pendiente"></span>
         </div>
       )}
