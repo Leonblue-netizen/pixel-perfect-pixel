@@ -175,7 +175,7 @@ export const equipo = [
     presentacion: "[Completar: presentación]",
     educacion: [
       {
-        titulo: "- Pregrado / Profesional en Gestión del Emprendimiento y la Innovación - Universidad del valle, 2026\n- Diseñadora de modas - Fundacion academia de dibujo profesional - 2024 ",
+        titulo: "- Pregrado / Profesional en Gestión del Emprendimiento y la Innovación - Universidad del valle, 2026 - Diseñadora de modas - Fundacion academia de dibujo profesional - 2024",
         lugar: "",
         anios: "",
       },
@@ -209,9 +209,9 @@ export const equipo = [
     presentacion: "Soy una consultora enfocada en optimizar tus procesos operativos, analizar datos clave para la toma de decisiones estratégicas para tu empresa y liderar la ejecución de iniciativas comerciales y activaciones de campo.",
     educacion: [
       {
-        titulo: "Pregrado / Profesional en Gestión del Emprendimiento y la Innovación\nDiseñadora de modas \n",
-        lugar: "[Completar: institución]",
-        anios: "[Completar: años]",
+         titulo: "- Pregrado / Profesional en Gestión del Emprendimiento y la Innovación - Universidad del valle, 2026 - Diseñadora de modas - Fundacion academia de dibujo profesional - 2024",
+         lugar: "",
+         anios: "",
       },
     ] as ItemEducacion[],
     experiencia: [
