@@ -245,7 +245,17 @@ function Proyecto({ persona, index }: { persona: (typeof equipo)[number]; index:
   );
 }
 
-function Retrato({ foto, nombre, index }: { foto: string; nombre: string; index: number }) {
+function Retrato({
+  foto,
+  nombre,
+  index,
+  aspecto = "aspect-[4/5]",
+}: {
+  foto: string;
+  nombre: string;
+  index: number;
+  aspecto?: string | undefined;
+}) {
   const [error, setError] = useState(false);
   const mostrarFoto = Boolean(foto) && !esPendiente(foto) && !error;
   const acento = acentoDe(index);
@@ -253,7 +263,7 @@ function Retrato({ foto, nombre, index }: { foto: string; nombre: string; index:
   return (
     <div className="relative mx-auto max-w-[15rem] md:max-w-[17rem]">
       {mostrarFoto ? (
-        <div className="aspect-[4/5] w-full" style={{ clipPath: recorte }}>
+        <div className={`${aspecto} w-full`} style={{ clipPath: recorte }}>
           <img
             src={foto}
             alt={nombre}
@@ -262,7 +272,7 @@ function Retrato({ foto, nombre, index }: { foto: string; nombre: string; index:
           />
         </div>
       ) : (
-        <div className="flex aspect-[4/5] w-full flex-col items-center justify-center rounded-[1.75rem] border-2 border-dashed border-pendiente px-6 text-center">
+        <div className={`flex ${aspecto} w-full flex-col items-center justify-center rounded-[1.75rem] border-2 border-dashed border-pendiente px-6 text-center`}>
           <span className="text-sm text-pendiente"></span>
         </div>
       )}
@@ -319,7 +329,12 @@ function Presentacion({ persona, index }: { persona: (typeof equipo)[number]; in
 
         <div className="grid gap-8 md:grid-cols-2 md:items-center md:gap-12">
           <div className={fotoDerecha ? "md:order-2" : "md:order-1"}>
-            <Retrato foto={persona.foto} nombre={persona.nombre} index={index} />
+            <Retrato
+              foto={persona.foto}
+              nombre={persona.nombre}
+              index={index}
+              aspecto={persona.retratoAspecto}
+            />
           </div>
 
           <div className={fotoDerecha ? "md:order-1" : "md:order-2"}>
