@@ -23,8 +23,8 @@ import fotoPostre from "@/assets/postre-copa.png.asset.json";
 
 export const marca = {
   nombre: "Lemaga",
-  manuscritoPortada: "portafolio 2026",
-  titulo: "Tres Frentes",
+  manuscritoPortada: "CONSULTORIA",
+  titulo: "Lemaga",
   subtitulo:
     "Consultoría para emprendimientos y pymes. Somos tres estudiantes con seis líneas de servicio y casos reales de emprendedores con los que ya trabajamos.",
   botonPrimario: "Ver servicios",
