@@ -152,7 +152,7 @@ export const equipo = [
     ],
     // Lista de herramientas de trabajo, por ejemplo: ["Figma", "Notion"].
     herramientas: ["Claude, Notion, Excel, Canva, Lovable"],
-    correo: "Jeidygaviria@gmail.com",
+    correo: "jeidygaviria@gmail.com",
     proyecto: {
       // Nombre y descripción vacíos a propósito: cada foto trae su propio
       // encabezado y texto abajo, así la tarjeta queda compacta y las fotos
