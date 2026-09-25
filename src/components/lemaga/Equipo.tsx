@@ -153,18 +153,22 @@ function InfoProyecto({ persona, index }: { persona: (typeof equipo)[number]; in
         Proyecto de {persona.nombre}
       </span>
 
-      {esPendiente(proyecto.nombre) ? (
-        <p className="pendiente font-sans mt-2 text-sm">{proyecto.nombre}</p>
-      ) : (
-        <h4 className="texto-ancha mt-2 text-2xl md:text-3xl">{proyecto.nombre}</h4>
-      )}
+      {proyecto.nombre ? (
+        esPendiente(proyecto.nombre) ? (
+          <p className="pendiente font-sans mt-2 text-sm">{proyecto.nombre}</p>
+        ) : (
+          <h4 className="texto-ancha mt-2 text-2xl md:text-3xl">{proyecto.nombre}</h4>
+        )
+      ) : null}
 
-      <div className="mt-4 min-h-[7rem]">
-        <Texto
-          valor={proyecto.descripcion}
-          className="block text-sm leading-relaxed text-muted-foreground"
-        />
-      </div>
+      {proyecto.descripcion ? (
+        <div className="mt-4 min-h-[7rem]">
+          <Texto
+            valor={proyecto.descripcion}
+            className="block text-sm leading-relaxed text-muted-foreground"
+          />
+        </div>
+      ) : null}
     </div>
   );
 }

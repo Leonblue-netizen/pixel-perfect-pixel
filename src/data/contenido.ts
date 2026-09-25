@@ -154,8 +154,11 @@ export const equipo = [
     herramientas: ["[Completar: herramientas]"],
     correo: "[correo]",
     proyecto: {
-      nombre: "[Completar: nombre del proyecto]",
-      descripcion: "[Completar: qué es el proyecto, qué problema resuelve y qué se logró]",
+      // Nombre y descripción vacíos a propósito: cada foto trae su propio
+      // encabezado y texto abajo, así la tarjeta queda compacta y las fotos
+      // resaltan. Si algún día quieres un titular general, escríbelo aquí.
+      nombre: "",
+      descripcion: "",
       fotos: [] as string[],
       // Tres fotos en fila: cada una con su encabezado arriba y su texto debajo.
       fotosConTexto: [
