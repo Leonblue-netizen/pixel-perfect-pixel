@@ -175,16 +175,16 @@ export const equipo = [
     presentacion: "[Completar: presentación]",
     educacion: [
       {
-        titulo: "Pregrado / Profesional en Gestión del Emprendimiento y la Innovación\nDiseñadora de modas \n",
-        lugar: "[Completar: institución]",
-        anios: "[Completar: años]",
+        titulo: "- Pregrado / Profesional en Gestión del Emprendimiento y la Innovación - Universidad del valle, 2026\n- Diseñadora de modas - Fundacion academia de dibujo profesional - 2024 ",
+        lugar: "",
+        anios: "",
       },
     ] as ItemEducacion[],
     experiencia: [
       {
-        cargo: "Consultora de Operaciones, Datos y Estrategia Comercial",
-        lugar: "[Completar: lugar]",
-        anios: "[Completar: años]",
+        cargo: "Fundadora de Quillaz , cali, 2023\n\n",
+        lugar: "",
+        anios: "",
       },
     ] as ItemExperiencia[],
     habilidades: [
