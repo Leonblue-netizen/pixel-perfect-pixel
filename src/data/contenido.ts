@@ -206,7 +206,7 @@ export const equipo = [
     nombre: "Jeidy Gaviria",
     especialidad: "gestión operativa, análisis de datos y ventas de campo",
     foto: fotoJeidy.url,
-    presentacion: "Consultora enfocada en optimizar procesos operativos, analizar datos clave para la toma de decisiones estratégicas y liderar la ejecución de iniciativas comerciales y activaciones de campo.",
+    presentacion: "Soy una consultora enfocada en optimizar tus procesos operativos, analizar datos clave para la toma de decisiones estratégicas para tu empresa y liderar la ejecución de iniciativas comerciales y activaciones de campo.",
     educacion: [
       {
         titulo: "Pregrado / Profesional en Gestión del Emprendimiento y la Innovación\nDiseñadora de modas \n",
