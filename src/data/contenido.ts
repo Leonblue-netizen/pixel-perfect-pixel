@@ -227,7 +227,7 @@ export const equipo = [
       "activación en ferias",
       "contenido y podcast",
     ],
-    herramientas: ["sdfghjklñ{"],
+    herramientas: ["Microsoft Excel (fórmulas y datos) | Python | Análisis PESTEL y DOFA | Encuestas de Campo | Plataformas Digitales y Podcast"],
     correo: "Jeidygaviria@gmail.com",
     proyecto: {
       nombre: "QUILLAZ ",
