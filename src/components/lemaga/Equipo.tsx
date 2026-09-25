@@ -245,7 +245,17 @@ function Proyecto({ persona, index }: { persona: (typeof equipo)[number]; index:
   );
 }
 
-function Retrato({ foto, nombre, index }: { foto: string; nombre: string; index: number }) {
+function Retrato({
+  foto,
+  nombre,
+  index,
+  posicion = "center",
+}: {
+  foto: string;
+  nombre: string;
+  index: number;
+  posicion?: string;
+}) {
   const [error, setError] = useState(false);
   const mostrarFoto = Boolean(foto) && !esPendiente(foto) && !error;
   const acento = acentoDe(index);
@@ -258,6 +268,7 @@ function Retrato({ foto, nombre, index }: { foto: string; nombre: string; index:
             src={foto}
             alt={nombre}
             onError={() => setError(true)}
+            style={{ objectPosition: posicion }}
             className="h-full w-full object-cover"
           />
         </div>
@@ -319,7 +330,12 @@ function Presentacion({ persona, index }: { persona: (typeof equipo)[number]; in
 
         <div className="grid gap-8 md:grid-cols-2 md:items-center md:gap-12">
           <div className={fotoDerecha ? "md:order-2" : "md:order-1"}>
-            <Retrato foto={persona.foto} nombre={persona.nombre} index={index} />
+            <Retrato
+              foto={persona.foto}
+              nombre={persona.nombre}
+              index={index}
+              posicion={persona.retratoPosicion}
+            />
           </div>
 
           <div className={fotoDerecha ? "md:order-1" : "md:order-2"}>
