@@ -216,9 +216,9 @@ export const equipo = [
     ] as ItemEducacion[],
     experiencia: [
       {
-        cargo: "Consultora de Operaciones, Datos y Estrategia Comercial",
-        lugar: "[Completar: lugar]",
-        anios: "[Completar: años]",
+        cargo: "Fundadora de Quillaz , cali, 2023",
+        lugar: "",
+        anios: "",
       },
     ] as ItemExperiencia[],
     habilidades: [
