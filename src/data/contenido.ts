@@ -127,21 +127,21 @@ export const equipo = [
     // La foto de Sofia es muy vertical: con este marco se ve completa, sin recortes.
     retratoAspecto: "aspect-[9/16]",
     // Párrafo corto de presentación personal.
-    presentacion: "Emprendedora y fundadora de Dulcesoft.\nAntes de diseñar cualquier cosa entrevisto a los clientes, porque prefiero validar con personas reales. Ayudo a emprendedores a entender qué necesita su cliente, identificar el problema real y convertirlo en un producto o servicio.",
+    presentacion: "Emprendedora y fundadora de Dulcesoft. Antes de diseñar cualquier cosa entrevisto a los clientes, porque prefiero validar con personas reales. Ayudo a emprendedores a entender qué necesita su cliente, identificar el problema real y convertirlo en un producto o servicio con un MVP.",
     // Agrega un objeto por cada título o programa (título, lugar, años).
     educacion: [
       {
-        titulo: "Gestión del Emprendimiento y la Innovación, Universidad del Valle y Next fellow",
-        lugar: "[Completar: institución]",
-        anios: "[Completar: años]",
+        titulo: "Gestión del Emprendimiento y la Innovación",
+        lugar: "[Universidad del valle]",
+        anios: "[Next]",
       },
     ] as ItemEducacion[],
     // Agrega un objeto por cada experiencia (cargo, lugar, años).
     experiencia: [
       {
         cargo: "Fundadora de Dulcesoft",
-        lugar: "[Completar: lugar]",
-        anios: "[Completar: años]",
+        lugar: "[Cali]",
+        anios: "[1 año]",
       },
     ] as ItemExperiencia[],
     habilidades: [
