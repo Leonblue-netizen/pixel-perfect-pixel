@@ -172,7 +172,7 @@ export const equipo = [
     nombre: "Francisco Martínez Díaz",
     especialidad: "desarrollo de negocios, finanzas y propiedad intelectual",
     foto: "",
-    presentacion: "[Completar: presentación]",
+    presentacion: "Consultora enfocada en optimizar procesos operativos, analizar datos clave para la toma de decisiones estratégicas y liderar la ejecución de iniciativas comerciales y activaciones de campo.",
     educacion: [
       {
         titulo: "[Completar: título del programa]",
