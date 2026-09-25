@@ -71,8 +71,8 @@ function FilaItem({ nombre, lugar, anios }: { nombre: string; lugar: string; ani
   return (
     <li className="text-sm leading-relaxed">
       <span className="font-medium">{nombre}</span>
-      {(lugar || anios) && <span className="text-tinta/60"> · {lugar} · </span>}
-      <span className="italic text-tinta/60">{anios}</span>
+      <span className="text-tinta/60">{lugar ? ` · ${lugar}` : ""}</span>
+      <span className="italic text-tinta/60">{anios ? ` · ${anios}` : ""}</span>
     </li>
   );
 }
