@@ -254,7 +254,7 @@ function Retrato({
   foto: string;
   nombre: string;
   index: number;
-  posicion?: string;
+  posicion?: string | undefined;
 }) {
   const [error, setError] = useState(false);
   const mostrarFoto = Boolean(foto) && !esPendiente(foto) && !error;
