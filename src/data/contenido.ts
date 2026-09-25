@@ -193,7 +193,7 @@ export const equipo = [
       "marco legal y SAS",
       "planes de marketing",
     ],
-    herramientas: ["Microsoft Excel (fórmulas y datos) | Análisis PESTEL y DOFA | Encuestas de Campo | Plataformas Digitales y Podcast"],
+    herramientas: ["Microsoft Excel (fórmulas y datos) | Python | Análisis PESTEL y DOFA | Encuestas de Campo | Plataformas Digitales y Podcast"],
     correo: "[correo]",
     proyecto: {
       nombre: "NOMBRE",
