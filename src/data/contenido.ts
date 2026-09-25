@@ -196,8 +196,8 @@ export const equipo = [
     herramientas: ["Microsoft Excel (fórmulas y datos) | Python | Análisis PESTEL y DOFA | Encuestas de Campo | Plataformas Digitales y Podcast"],
     correo: "[correo]",
     proyecto: {
-      nombre: "QUILLAZ ",
-      descripcion: "Quíllaz es un emprendimiento de moda sostenible que transforma retazos textiles y tejidos artesanales en bolsos contemporáneos. Nace para contribuir a la preservación de los saberes ancestrales y generar oportunidades económicas para las artesanas del Resguardo Indígena del Gran Cumbal. Ha logrado consolidar su identidad de marca, desarrollar colecciones y participar en espacios comerciales y culturales como Sucursal Fest, visibilizando el talento artesanal y promoviendo el comercio justo.",
+      nombre: "NOMBRE",
+      descripcion: "Proyecto y problema que resuelve ",
       fotos: [] as string[],
       orientacion: "horizontal",
     } as Proyecto,
