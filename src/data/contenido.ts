@@ -244,7 +244,7 @@ export const caso = {
   pasos: ["Entrevista", "Tema de ayuda", "Cartilla-guía"],
   // Acepta enlaces de YouTube, Vimeo o Google Drive. Si está vacío se muestra
   // el marco con "video próximamente".
-  video: "",
+  video: "https://youtu.be/X2oplpL-vq4",
   textoVideoPendiente: "video próximamente",
   // Si está vacío, el botón de descarga no aparece.
   enlaceCartilla: "",
