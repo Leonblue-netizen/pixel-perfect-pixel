@@ -37,14 +37,15 @@ export function Caso() {
 
           <Aparece delay={120}>
             <div className="space-y-5">
-              <div className="relative aspect-video overflow-hidden rounded-[2.25rem] border border-border bg-muted">
+              <div className="relative aspect-video -mx-5 overflow-hidden rounded-[1.5rem] border border-border bg-muted sm:mx-0 sm:rounded-[2.25rem]">
                 {video ? (
                   <iframe
                     src={video}
                     title={caso.titulo}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture"
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture; fullscreen"
                     allowFullScreen
-                    className="h-full w-full"
+                    className="absolute inset-0 h-full w-full"
                   />
                 ) : (
                   <div className="flex h-full w-full flex-col items-center justify-center gap-3">
