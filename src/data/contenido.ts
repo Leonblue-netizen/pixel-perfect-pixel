@@ -124,8 +124,8 @@ export const equipo = [
     especialidad: "innovación, diseño centrado en el usuario y prospectiva",
     // Pega aquí la ruta de la foto, por ejemplo: "/images/sofia.jpg". Vacío = recuadro punteado.
     foto: fotoSofia.url,
-    // Encuadre del retrato. "center 20%" sube la foto para no cortar la cabeza.
-    retratoPosicion: "center 20%",
+    // La foto de Sofia es muy vertical: con este marco se ve completa, sin recortes.
+    retratoAspecto: "aspect-[9/16]",
     // Párrafo corto de presentación personal.
     presentacion: "[Completar: presentación]",
     // Agrega un objeto por cada título o programa (título, lugar, años).

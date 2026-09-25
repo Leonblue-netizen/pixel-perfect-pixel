@@ -249,12 +249,12 @@ function Retrato({
   foto,
   nombre,
   index,
-  posicion = "center",
+  aspecto = "aspect-[4/5]",
 }: {
   foto: string;
   nombre: string;
   index: number;
-  posicion?: string | undefined;
+  aspecto?: string | undefined;
 }) {
   const [error, setError] = useState(false);
   const mostrarFoto = Boolean(foto) && !esPendiente(foto) && !error;
@@ -263,7 +263,7 @@ function Retrato({
   return (
     <div className="relative mx-auto max-w-[15rem] md:max-w-[17rem]">
       {mostrarFoto ? (
-        <div className="aspect-[4/5] w-full" style={{ clipPath: recorte }}>
+        <div className={`${aspecto} w-full`} style={{ clipPath: recorte }}>
           <img
             src={foto}
             alt={nombre}
@@ -334,7 +334,7 @@ function Presentacion({ persona, index }: { persona: (typeof equipo)[number]; in
               foto={persona.foto}
               nombre={persona.nombre}
               index={index}
-              posicion={persona.retratoPosicion}
+              aspecto={persona.retratoAspecto}
             />
           </div>
 
