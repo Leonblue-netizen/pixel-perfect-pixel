@@ -159,9 +159,9 @@ export const equipo = [
       fotos: [] as string[],
       // Tres fotos en fila, cada una con su propio texto debajo.
       fotosConTexto: [
-        { src: fotoAimsDream.url, texto: "[Completar: texto de la foto 1]" },
-        { src: fotoLimit.url, texto: "[Completar: texto de la foto 2]" },
-        { src: fotoPostre.url, texto: "[Completar: texto de la foto 3]" },
+        { src: fotoAimsDream.url, texto: "Aints&dream, MVP de productividad para personas multirol. Muestra en qué rol estás invirtiendo más tiempo." },
+        { src: fotoLimit.url, texto: "Limit, MVP para emprendedores para el registro y la toma de decisiones." },
+        { src: fotoPostre.url, texto: "Dulcesoft, emprendimiento de postres tipo pavé en distintos sabores, ya lanzado al mercado." },
       ] as FotoConTexto[],
     } as Proyecto,
   },
