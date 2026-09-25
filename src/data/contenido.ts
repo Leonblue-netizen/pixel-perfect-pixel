@@ -231,7 +231,7 @@ export const equipo = [
     correo: "[correo]",
     proyecto: {
       nombre: "QUILLAZ ",
-      descripcion: "[Completar: qué es el pr",
+      descripcion: "Quíllaz es un emprendimiento de moda sostenible que transforma retazos textiles y tejidos artesanales en bolsos contemporáneos. Nace para contribuir a la preservación de los saberes ancestrales y generar oportunidades económicas para las artesanas del Resguardo Indígena del Gran Cumbal. Ha logrado consolidar su identidad de marca, desarrollar colecciones y participar en espacios comerciales y culturales como Sucursal Fest, visibilizando el talento artesanal y promoviendo el comercio justo",
       fotos: [fotoDesfile.url, fotoStandQuillaz.url, fotoTaller.url] as string[],
     } as Proyecto,
   },
