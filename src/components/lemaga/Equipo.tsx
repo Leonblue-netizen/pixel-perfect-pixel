@@ -112,18 +112,23 @@ function BloqueTexto({ texto }: { texto: string }) {
   return <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{texto}</p>;
 }
 
-/** Fila de fotos con un bloque de texto propio debajo de cada una. */
+/** Fila de fotos: encabezado arriba, imagen y un bloque de texto propio debajo. */
 function FotosConCaption({ fotos }: { fotos: FotoConTexto[] }) {
   const total = Math.max(3, fotos.length);
   const items = Array.from(
     { length: total },
-    (_, i) => fotos[i] ?? { src: "", texto: "[Completar: texto de la foto]" },
+    (_, i) => fotos[i] ?? { src: "", titulo: "", texto: "[Completar: texto de la foto]" },
   );
 
   return (
     <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
       {items.map((item, i) => (
         <div key={i}>
+          {item.titulo ? (
+            <h5 className="texto-ancha mb-2 text-sm font-bold text-foreground">
+              {item.titulo}
+            </h5>
+          ) : null}
           <EspacioFoto src={item.src} aspecto="aspect-[4/5]" />
           <BloqueTexto texto={item.texto} />
         </div>
