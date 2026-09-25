@@ -89,8 +89,8 @@ export const servicios = [
 export type ItemEducacion = { titulo: string; lugar: string; anios: string };
 export type ItemExperiencia = { cargo: string; lugar: string; anios: string };
 
-/** Una foto con su propio texto corto debajo, por ejemplo un pie de foto. */
-export type FotoConTexto = { src: string; texto: string };
+/** Una foto con su encabezado arriba y su texto corto debajo, por ejemplo un pie de foto. */
+export type FotoConTexto = { src: string; titulo?: string; texto: string };
 
 /**
  * El proyecto de cada consultor.
@@ -157,11 +157,11 @@ export const equipo = [
       nombre: "[Completar: nombre del proyecto]",
       descripcion: "[Completar: qué es el proyecto, qué problema resuelve y qué se logró]",
       fotos: [] as string[],
-      // Tres fotos en fila, cada una con su propio texto debajo.
+      // Tres fotos en fila: cada una con su encabezado arriba y su texto debajo.
       fotosConTexto: [
-        { src: fotoAimsDream.url, texto: "Aints&dream, MVP de productividad para personas multirol. Muestra en qué rol estás invirtiendo más tiempo." },
-        { src: fotoLimit.url, texto: "Limit, MVP para emprendedores para el registro y la toma de decisiones." },
-        { src: fotoPostre.url, texto: "Dulcesoft, emprendimiento de postres tipo pavé en distintos sabores, ya lanzado al mercado." },
+        { src: fotoAimsDream.url, titulo: "Aints&dream", texto: "Aints&dream, MVP de productividad para personas multirol. Muestra en qué rol estás invirtiendo más tiempo." },
+        { src: fotoLimit.url, titulo: "Limit", texto: "Limit, MVP para emprendedores para el registro y la toma de decisiones." },
+        { src: fotoPostre.url, titulo: "Dulcesoft", texto: "Dulcesoft, emprendimiento de postres tipo pavé en distintos sabores, ya lanzado al mercado." },
       ] as FotoConTexto[],
     } as Proyecto,
   },
