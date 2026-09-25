@@ -175,14 +175,14 @@ export const equipo = [
     presentacion: "Consultora enfocada en optimizar procesos operativos, analizar datos clave para la toma de decisiones estratégicas y liderar la ejecución de iniciativas comerciales y activaciones de campo.",
     educacion: [
       {
-        titulo: "[Completar: título del programa]",
+        titulo: "Pregrado / Profesional en Gestión del Emprendimiento y la Innovación\nDiseñadora de modas \n",
         lugar: "[Completar: institución]",
         anios: "[Completar: años]",
       },
     ] as ItemEducacion[],
     experiencia: [
       {
-        cargo: "[Completar: cargo]",
+        cargo: "Consultora de Operaciones, Datos y Estrategia Comercial",
         lugar: "[Completar: lugar]",
         anios: "[Completar: años]",
       },
@@ -193,11 +193,11 @@ export const equipo = [
       "marco legal y SAS",
       "planes de marketing",
     ],
-    herramientas: ["[Completar: herramientas]"],
+    herramientas: ["Microsoft Excel (fórmulas y datos) | Python | Análisis PESTEL y DOFA | Encuestas de Campo | Plataformas Digitales y Podcast"],
     correo: "[correo]",
     proyecto: {
-      nombre: "[Completar: nombre del proyecto]",
-      descripcion: "[Completar: qué es el proyecto, qué problema resuelve y qué se logró]",
+      nombre: "QUILLAZ ",
+      descripcion: "[Completar: qué es el pr",
       fotos: [] as string[],
       orientacion: "horizontal",
     } as Proyecto,
