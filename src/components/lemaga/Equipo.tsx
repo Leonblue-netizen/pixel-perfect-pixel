@@ -125,7 +125,7 @@ function FotosConCaption({ fotos }: { fotos: FotoConTexto[] }) {
       {items.map((item, i) => (
         <div key={i}>
           {item.titulo ? (
-            <h5 className="texto-ancha mb-2 text-sm font-bold uppercase tracking-wide text-foreground">
+            <h5 className="texto-ancha mb-2 text-sm font-bold text-foreground">
               {item.titulo}
             </h5>
           ) : null}
